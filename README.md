@@ -1,71 +1,98 @@
 # Career Time Manager
 
-Too much to do today?
+**Get an automatic daily check-in for your job search.**
 
-Pick what matters first.
+See what is due.
 
-This is a **skill for Codex**.
+Know what to do first.
 
-## What it helps with
+Carry unfinished work into tomorrow.
 
-- Find the time you have today.
-- Pick 1–3 tasks to do first.
-- Break big tasks into small steps.
-- Decide what can wait.
+This is a **Codex skill for daily briefings and reminders**.
 
-## Try it
+Your workspace or Codex automation controls when it runs.
 
-Tell Codex your available time, tasks, and deadlines.
+## What you get
 
-```text
-$career-time-manager
-I have 2 hours today.
-My application is due tomorrow.
-I also need to prepare for an interview.
-What should I do first?
-```
+- Time available today.
+- Your top 1–3 tasks.
+- Upcoming deadlines.
+- Work that can wait.
+- One clear step for tomorrow.
 
-## Example result
+## How the existing workflow starts
 
-Your plan will depend on your deadlines.
+**Morning:** Open your career workspace and send your first message after 8 a.m.
 
-> **First:** Check what is missing from the application — 20 minutes.
+The workspace adds a daily briefing automatically.
+
+It checks whether you already received one that day.
+
+**End of day:** Say that you are done for today.
+
+Codex summarizes unfinished work for the next morning.
+
+These reports appear in the Codex conversation.
+
+## Example morning briefing
+
+> **Time today:** 2 hours.
+>
+> **Due tomorrow:** Your application.
+>
+> **Do first:** Check missing answers — 20 minutes.
 >
 > **Next:** Edit the application — 60 minutes.
 >
-> **Then:** Check the submission requirements — 20 minutes.
+> **Finish:** Check submission requirements — 20 minutes.
 >
 > Keep 20 minutes free.
->
-> Start interview prep tomorrow by choosing 3 practice questions.
 
-Plans can change.
+## Example evening check-in
 
 ```text
-I only have 30 minutes left.
-Help me choose one task.
+I'm done for today.
+Help me wrap up.
 ```
+
+> **Done:** Application edits.
+>
+> **Carry over:** Interview preparation.
+>
+> **Start tomorrow:** Choose 3 practice questions.
+
+## Want a reminder at a set time?
+
+Set up a recurring Codex automation that uses this skill.
+
+Choose the time, timezone, and conversation for its reports.
+
+Installing the skill alone does not create that automation.
+
+The morning workflow above starts with your first message.
+
+It is not a timed push notification.
 
 ## Good to know
 
-You can share your schedule in the chat.
+Connect Calendar and Notion if you want briefings based on those sources.
 
-Calendar and Notion connections are optional.
+You can also provide your schedule in the chat.
 
-The skill does not change either service unless you ask.
-
-Time estimates may need adjusting.
+The skill does not change Calendar or Notion unless you ask.
 
 Keep personal schedules and application records out of this public repository.
 
 <details>
-<summary>Setup and file details</summary>
+<summary>Setup and verified behavior</summary>
+
+### Install
 
 Put this repository's files in `.agents/skills/career-time-manager` inside your project.
 
 Compare any existing installation before replacing it.
 
-If you use Git, run this from your project folder:
+If you use Git:
 
 ```sh
 git clone https://github.com/nana-park/career-time-manager.git .agents/skills/career-time-manager
@@ -73,11 +100,67 @@ git clone https://github.com/nana-park/career-time-manager.git .agents/skills/ca
 
 Open the project in Codex and check that the skill is available.
 
-Connect Google Calendar or Notion separately if you want Codex to read them.
+### Add the daily workflow
 
-This repository contains instructions, not a standalone app or a built-in scheduler.
+The original workspace supplies the morning and evening triggers outside this repository.
 
-The skill is in `SKILL.md`.
+Its morning rule runs after the first ordinary message after 08:00 in Asia/Seoul.
+
+A private date record prevents duplicate reports.
+
+The rule does not run for scheduled automation turns.
+
+Its evening rule runs when the user clearly ends the workday.
+
+A private carry-over record feeds the next morning's briefing.
+
+To reproduce this behavior, add equivalent workspace instructions and private state storage.
+
+Do not copy someone else's personal state or connection settings.
+
+### Set up scheduled reminders
+
+For reports without sending a message first, configure a separate Codex automation.
+
+The automation must explicitly call this skill.
+
+Example instruction:
+
+```text
+Use career-time-manager to prepare my daily briefing.
+Read my authorized calendar busy times and task deadlines.
+Review unfinished work from the previous day.
+Report my available time, top 3 tasks, and nearest deadline.
+Do not edit my calendar or task records.
+```
+
+Select the schedule and timezone in your automation settings.
+
+Connect the required services and allow the automation to access the workspace.
+
+Choose where the report should appear.
+
+App or device notifications depend on the host's notification settings.
+
+This repository does not include email, SMS, or mobile push delivery.
+
+### What was verified
+
+The source skill defines planning, morning reports, and end-of-day carry-over.
+
+The workspace documents define the first-message and end-of-day triggers.
+
+A separate active workspace automation runs twice daily.
+
+Its current prompt does not explicitly call this skill.
+
+That schedule is not evidence that this skill already sends timed reminders.
+
+No notification delivery or live automation run was tested for this documentation update.
+
+### Files and origin
+
+`SKILL.md` contains the skill instructions.
 
 The source had no `agents/` or `references/` folder.
 
