@@ -1,90 +1,88 @@
 # Career Time Manager
 
-오늘 할 일이 너무 많을 때, 무엇부터 할지 함께 정해요.
+Too much to do today?
 
-취업 준비를 돕는 **Codex 스킬**이에요.
+Pick what matters first.
 
-Codex에 설치한 뒤 대화로 사용해요.
+This is a **skill for Codex**.
 
-## 무엇을 도와주나요?
+## What it helps with
 
-- 오늘 쓸 수 있는 시간을 살펴봐요.
-- 먼저 할 일 1~3개를 골라요.
-- 큰 일을 작은 단계로 나눠요.
-- 시간이 부족하면 줄이거나 미룰 일을 정해요.
+- Find the time you have today.
+- Pick 1–3 tasks to do first.
+- Break big tasks into small steps.
+- Decide what can wait.
 
-## 어떻게 쓰나요?
+## Try it
 
-오늘 쓸 수 있는 시간과 해야 할 일을 알려주세요.
-
-마감이 있다면 함께 적어주세요.
+Tell Codex your available time, tasks, and deadlines.
 
 ```text
 $career-time-manager
-오늘 2시간 쓸 수 있어.
-내일까지 지원서를 내야 해.
-면접 준비도 해야 하는데 무엇부터 할까?
+I have 2 hours today.
+My application is due tomorrow.
+I also need to prepare for an interview.
+What should I do first?
 ```
 
-## 이런 답을 받을 수 있어요
+## Example result
 
-아래는 예시예요.
+Your plan will depend on your deadlines.
 
-실제 답은 일정과 마감에 따라 달라져요.
+> **First:** Check what is missing from the application — 20 minutes.
+>
+> **Next:** Edit the application — 60 minutes.
+>
+> **Then:** Check the submission requirements — 20 minutes.
+>
+> Keep 20 minutes free.
+>
+> Start interview prep tomorrow by choosing 3 practice questions.
 
-> **먼저:** 지원서에서 빠진 내용 확인 — 20분
->
-> **다음:** 지원서 고치기 — 60분
->
-> **마지막:** 제출 항목 확인 — 20분
->
-> 남은 20분은 여유 시간으로 두세요.
->
-> 면접 준비는 내일로 미뤄요.
-> 내일은 예상 질문 3개를 고르는 것부터 시작해요.
-
-계획이 벅차면 이렇게 말해도 돼요.
+Plans can change.
 
 ```text
-30분밖에 안 남았어. 가장 중요한 일 하나만 골라줘.
+I only have 30 minutes left.
+Help me choose one task.
 ```
 
-## 알아두세요
+## Good to know
 
-별도 앱이 아니라 Codex 안에서 쓰는 안내서예요.
+You can share your schedule in the chat.
 
-캘린더나 Notion 연결은 따로 필요해요.
+Calendar and Notion connections are optional.
 
-연결하지 않아도 일정을 직접 알려줄 수 있어요.
+The skill does not change either service unless you ask.
 
-요청하지 않으면 캘린더나 Notion 내용을 바꾸지 않아요.
+Time estimates may need adjusting.
 
-시간은 예상치예요. 실제 상황에 맞춰 함께 조정해요.
-
-개인 일정과 지원서 내용은 이 공개 저장소에 올리지 마세요.
+Keep personal schedules and application records out of this public repository.
 
 <details>
-<summary>설치 방법과 파일 정보</summary>
+<summary>Setup and file details</summary>
 
-프로젝트의 `.agents/skills/career-time-manager` 폴더에 이 저장소의 파일을 넣으세요.
+Put this repository's files in `.agents/skills/career-time-manager` inside your project.
 
-이미 같은 이름의 폴더가 있으면 먼저 내용을 비교하세요.
+Compare any existing installation before replacing it.
 
-Git을 쓴다면 프로젝트 폴더에서 다음 명령을 실행할 수 있어요.
+If you use Git, run this from your project folder:
 
 ```sh
- git clone https://github.com/nana-park/career-time-manager.git .agents/skills/career-time-manager
+git clone https://github.com/nana-park/career-time-manager.git .agents/skills/career-time-manager
 ```
 
-Codex에서 작업공간을 열고 스킬을 불러올 수 있는지 확인하세요.
+Open the project in Codex and check that the skill is available.
 
-Google Calendar·Notion을 쓰려면 연결과 접근 권한을 따로 준비하세요.
+Connect Google Calendar or Notion separately if you want Codex to read them.
 
-스킬 지침은 `SKILL.md` 한 파일이에요.
+This repository contains instructions, not a standalone app or a built-in scheduler.
 
-원본에는 `agents/`나 `references/` 폴더가 없어요.
+The skill is in `SKILL.md`.
 
-`nana-park/skills`의 `875982c984d8fd7f40931826dc4a73ff67e1e5cb` 커밋에서 이 스킬만 복사했어요.
-다른 스킬, 이전 Git 이력, 개인 기록은 가져오지 않았어요.
+The source had no `agents/` or `references/` folder.
+
+Only this skill was copied from `nana-park/skills` at commit `875982c984d8fd7f40931826dc4a73ff67e1e5cb`.
+
+Other skills, personal records, and the original Git history were not copied.
 
 </details>
